@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Assistant</string>
+    <string name="btn_start_morning">Start Morning</string>
+    <string name="btn_start_evening">Start Evening</string>
+    <string name="title_activity_get_news">GetNewsActivity</string>
+    <string name="step">Step:</string>
+    <string name="task">Task:</string>
+</resources>
