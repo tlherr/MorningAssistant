@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.tlherr.assistant.Service.Radio;
+
 /**
  * This android program is designed to keep mornings on track. It will do the following things
  *
@@ -27,6 +29,8 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     private Button startMorningButton;
+    private Button startRadioButton;
+    private Button stopRadioButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         startMorningButton = (Button) this.findViewById(R.id.startMorningBtn);
-
         startMorningButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,5 +45,26 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        startRadioButton = (Button) this.findViewById(R.id.startRadioButton);
+        startRadioButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Radio radio = Radio.getInstance();
+                radio.start();
+            }
+        });
+
+        stopRadioButton = (Button) this.findViewById(R.id.stopRadioButton);
+        stopRadioButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Radio radio = Radio.getInstance();
+                radio.stop();
+            }
+        });
+
+
     }
 }
